@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局和设置背景图片练习demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .towerCrane {
+            display: flex;
+            /* 让整个div.demo盒子固定在屏幕的最上方和最左方 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            /* 这是让整个div跟屏幕实现一模一样的大小，从而达到全屏效果 */
+            width: 100%;
+            height: 100%;
+            /* min-width是为了实现让屏幕宽度在1000px以内时，div的大小保持不变，也就是说在这种情况下，缩放屏幕宽度时，图片不要缩放（只有在1000px以内才有效）。 */
+            min-width: 1000px;
+            justify-content: space-around;
+            align-items: center;
+            background-image: url("./images/bg.png");
+            background-size: cover;
+            -webkit-background-size: cover;
+            -o-background-size: cover;
+            background-position: center 0
+        }
+
+        .towerCrane>div {
+            display: inline-block;
+            width: 110px;
+            height: 90px;
+            background: rgba(13, 67, 130, 0.6);
+            border-radius: 6px;
+            border: 1px solid rgba(44, 186, 255, 1);
+            text-align: center;
+        }
+
+        .towerCrane img {
+            margin: 13px 10px 0 37px;
+            width: 36px;
+            height: 33px;
+            display: block;
+        }
+
+        .towerCrane>div>span {
+            text-align: center;
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #ffffff;
+            line-height: 42px;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1.0;
+            }
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: 1.0;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            to {
+                opacity: 1.0;
+            }
+        }
+
+        .towerCrane>.towerCrane-foot-red {
+            animation: fade 600ms infinite;
+            -webkit-animation: fade 600ms infinite;
+            display: inline-block;
+            width: 110px;
+            height: 90px;
+            background: rgba(13, 67, 130, 0.6);
+            border-radius: 6px;
+            border: 1px solid rgba(210, 53, 84, 1);
+            /* margin: 10px 38px 0 12px; */
+            text-align: center;
+        }
+
+        .towerCrane>.towerCrane-foot-red>span {
+            text-align: center;
+            font-size: 16px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: rgba(210, 53, 84, 1);
+            line-height: 42px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="towerCrane">
+        <div>
+            <img src="./images/alarm_b.png" />
+            <span>CH4</span>
+        </div>
+        <div>
+            <img src="./images/alarm_b.png" />
+            <span>CO</span>
+        </div>
+        <div class="towerCrane-foot-red">
+            <img src="./images/alarm_r.png" />
+            <span>O3</span>
+        </div>
+        <div>
+            <img src="./images/alarm_b.png" />
+            <span>H2S</span>
+        </div>
+        <div>
+            <img src="./images/alarm_b.png" />
+            <span>温度</span>
+        </div>
+        <div>
+            <img src="./images/alarm_b.png" />
+            <span>湿度</span>
+        </div>
+    </div>
+</body>
+
+</html>
